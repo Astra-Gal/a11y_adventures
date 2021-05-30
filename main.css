@@ -1,0 +1,135 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: inherit;
+}
+
+* + * {
+  margin-top: 1rem;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  background: crimson;
+  color: white;
+  padding: 8px;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+ul.main-nav {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+ul.main-nav > li {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+}
+
+#maincontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f4f4f4;
+  color: #000;
+}
+
+h1 {
+  font-family: "Limelight", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  background: black;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  padding: 7px 10px;
+  margin: 5px;
+  width: 6em;
+}
+
+button:hover,
+:focus {
+  background: rgb(85, 85, 85);
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(95, 93, 93);
+}
+
+::placeholder {
+  color: rgb(54, 53, 53);
+  font-style: italic;
+}
+
+::-webkit-input-placeholder {
+  color: rgb(54, 53, 53);
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  color: rgb(54, 53, 53);
+  font-style: italic;
+}
+
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+
+.defs-svg {
+  display: none;
+}
+
+#sign-up-error {
+  /* display: none; */
+  background: crimson;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+#sign-up-error > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg.icon-warning-sign {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -30px;
+  margin-right: 3px;
+}
