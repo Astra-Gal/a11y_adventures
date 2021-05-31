@@ -57,19 +57,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const handleFilter = (event) => {
     const selected = event.target.value;
     const cards = document.getElementsByClassName("mascot-card");
+    // to update the ARIA live div with info on the results of the filter
+    const mascotUpdate = document.getElementById("mascot-update");
+
     if (selected === "show-all") {
       for (let i = 0; i < cards.length; i++) {
         cards[i].style.display = "flex";
       }
+      mascotUpdate.innerText =
+        "Showing all mascots. " + cards.length + " mascots listed.";
+      console.log(mascotUpdate);
     } else {
+      let selectedMascots = [];
       for (let i = 0; i < cards.length; i++) {
-        console.log(cards[0].className);
         if (cards[i].className.includes(selected)) {
           cards[i].style.display = "flex";
+          selectedMascots.push(cards[i]);
         } else {
           cards[i].style.display = "none";
         }
       }
+      mascotUpdate.innerText =
+        "Showing all " +
+        selected +
+        " mascots. " +
+        selectedMascots.length +
+        " mascots listed.";
+      console.log(mascotUpdate);
     }
   };
 
