@@ -48,6 +48,7 @@ ul.main-nav > li {
   align-items: center;
   background: #f4f4f4;
   color: #000;
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -90,6 +91,12 @@ input {
   border: 1px solid rgb(95, 93, 93);
 }
 
+label > span {
+  color: crimson;
+  font-style: italic;
+  margin-left: 10px;
+}
+
 ::placeholder {
   color: rgb(54, 53, 53);
   font-style: italic;
@@ -109,12 +116,16 @@ input[type="password"]::-ms-reveal {
   display: none;
 }
 
+input[aria-invalid="true"] {
+  border-color: crimson;
+}
+
 .defs-svg {
   display: none;
 }
 
 #sign-up-error {
-  /* display: none; */
+  display: none;
   background: crimson;
   color: white;
   padding: 5px;
@@ -130,6 +141,35 @@ svg.icon-warning-sign {
   width: 40px;
   height: 40px;
   position: relative;
-  top: -30px;
-  margin-right: 3px;
+  top: -1em;
+  margin-right: 1em;
+}
+
+.mascot-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.mascot-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li.mascot-card {
+  display: flex;
+  flex-direction: column;
+  width: 19em;
+  box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+li.mascot-card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 5px 5px 0 0;
 }

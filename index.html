@@ -29,7 +29,7 @@
     <nav>
       <ul class="main-nav">
         <li><a href="">About</a></li>
-        <li><a href="">Careers</a></li>
+        <li><a href="">Contact</a></li>
         <li><a href="">Blog</a></li>
       </ul>
     </nav>
@@ -61,61 +61,169 @@
     <main id="maincontent" tabindex="-1">
       <!-- tabindex of -1 takes care of older browsers that don't move focus automatically when named anchors are clicked -->
       <h1>Accessibility Adventures</h1>
-      <p>Is inclusive design up your a11y?</p>
-      <div role="toolbar" aria-label="Sign up or Login">
-        <button aria-pressed="true">Sign up</button>
-        <button aria-pressed="false">Login</button>
-      </div>
-      <div id="forms">
-        <div id="sign-up-form">
-          <form id="sign-up">
-            <label for="email"
-              >Your email address <strong aria-hidden="true">*</strong></label
-            >
-            <input type="text" id="email" name="email" aria-required="true" />
-            <label for="username"
-              >Pick a username <strong aria-hidden="true">*</strong></label
-            >
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="e.g. Womble76"
-              aria-required="true"
-            />
-            <label for="password"
-              >Pick a password <strong aria-hidden="true">*</strong></label
-            >
-            <input
-              type="password"
-              id="password"
-              name="password"
-              aria-required="true"
-            />
-            <label
-              ><input type="checkbox" id="showPassword" /> show password</label
-            >
+      <p>Is inclusive design right up your a11y?</p>
+      <p>Sign up below!</p>
 
-            <div id="sign-up-error" aria-live="assertive" role="alert">
-              <p>
-                <svg
-                  class="icon-warning-sign"
-                  viewBox="0 0 16 20"
-                  role="img"
-                  aria-label="sign-up-error:"
-                >
-                  <use xlink:href="#warning-sign"></use>
-                </svg>
-                Uh oh! Looks like there's a problem... please check your info
-                above
-              </p>
-            </div>
-            <button type="submit">Sign Up</button>
-          </form>
-        </div>
-        <div id="login">
-          <form action=""></form>
-        </div>
+      <div id="sign-up-form">
+        <form id="sign-up">
+          <div id="sign-up-error" aria-live="assertive" role="alert">
+            <svg
+              class="icon-warning-sign"
+              viewBox="0 0 16 20"
+              role="img"
+              aria-label="sign-up-error:"
+            >
+              <use xlink:href="#warning-sign"></use>
+            </svg>
+            <p id="sign-up-error-messages"></p>
+          </div>
+          <label for="name"
+            >Your name <strong aria-hidden="true">*</strong
+            ><span id="name-hint"></span
+          ></label>
+          <input type="text" id="name" name="name" aria-required="true" />
+
+          <label for="email"
+            >Your email address <strong aria-hidden="true">*</strong
+            ><span id="email-hint"></span
+          ></label>
+          <input type="text" id="email" name="email" aria-required="true" />
+
+          <label for="password"
+            >Pick a password <strong aria-hidden="true">*</strong
+            ><span id="password-hint"></span
+          ></label>
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="min 6 characters"
+            aria-required="true"
+          />
+          <label
+            ><input type="checkbox" id="showPassword" /> show password</label
+          >
+
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+      <h2>Choose your accessibility mascot!</h2>
+      <form role="form" class="sorter" method="get">
+        <fieldset>
+          <legend>Sort by</legend>
+          <input
+            type="radio"
+            name="sort-method"
+            id="show-all"
+            name="show-all"
+            checked
+          />
+          <label for="show-all">show all</label>
+          <input
+            type="radio"
+            name="sort-method"
+            id="name-a-z"
+            name="name-a-z"
+          />
+          <label for="name-a-z">name a-z</label>
+          <input
+            type="radio"
+            name="sort-method"
+            id="name-z-a"
+            name="name-z-a"
+          />
+          <label for="name-z-a">name z-a</label>
+          <input
+            type="radio"
+            name="sort-method"
+            id="only-mythical"
+            name="only-mythical"
+          />
+          <label for="only-mythical">show only mythical</label>
+          <input
+            type="radio"
+            name="sort-method"
+            id="only-non-mythical"
+            name="only-non-mythical"
+          />
+          <label for="only-non-mythical">show only non-mythical</label>
+        </fieldset>
+        <button type="submit">sort</button>
+      </form>
+      <div class="mascot-wrapper">
+        <ul class="mascot-list">
+          <li class="mascot-card flighted mythical">
+            <img src="assets/pegasus.png" alt="" />
+            <h3>Peter the Pegasus</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card flighted mythical">
+            <img src="assets/griffin.png" alt="" />
+            <h3>Garry the Griffin</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card flighted">
+            <img src="assets/flamingo.png" alt="" />
+            <h3>Fenella the Flamingo</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card water">
+            <img src="assets/manatee.png" alt="" />
+            <h3>Marvin the Manatee</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card land">
+            <img src="assets/corgi.png" alt="" />
+            <h3>Claire the Corgi</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card land">
+            <img src="assets/elephant.png" alt="" />
+            <h3>Elvis the Elephant</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card water">
+            <img src="assets/hammerhead.png" alt="" />
+            <h3>Hermione the Hammerhead</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+        </ul>
       </div>
     </main>
   </body>
