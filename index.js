@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const handleFilter = (selected) => {
+  const handleFilter = (event) => {
+    const selected = event.target.value;
     const cards = document.getElementsByClassName("mascot-card");
     if (selected === "show-all") {
       for (let i = 0; i < cards.length; i++) {
@@ -62,7 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } else {
       for (let i = 0; i < cards.length; i++) {
-        if (cards[i].className.indexOf(selected) > -1) {
+        console.log(cards[0].className);
+        if (cards[i].className.includes(selected)) {
           cards[i].style.display = "flex";
         } else {
           cards[i].style.display = "none";
