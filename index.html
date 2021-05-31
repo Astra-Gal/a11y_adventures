@@ -164,7 +164,12 @@
           <label for="non-magic">non-mythical</label>
         </fieldset>
         <button type="submit" id="mascot-button">sort</button>
-        <div aria-live="polite" role="alert" id="mascot-update"></div>
+        <div
+          aria-live="polite"
+          aria-atomic="true"
+          role="alert"
+          id="mascot-update"
+        ></div>
       </form>
       <div class="mascot-wrapper">
         <ul class="mascot-list">
