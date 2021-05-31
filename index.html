@@ -109,7 +109,8 @@
         </form>
       </div>
       <h2>Choose your accessibility mascot!</h2>
-      <form role="form" class="sorter" method="get">
+      <form role="form" class="sorter" id="mascot-sorter" method="get">
+        <!-- having the aria role of form on the form turns this widget into a region, making it navigable by screenreaders using shortcuts -->
         <fieldset>
           <legend>Sort by</legend>
           <input
@@ -117,64 +118,60 @@
             name="sort-method"
             id="show-all"
             name="show-all"
+            value="show-all"
             checked
           />
           <label for="show-all">show all</label>
           <input
             type="radio"
             name="sort-method"
-            id="name-a-z"
-            name="name-a-z"
+            id="water"
+            name="water"
+            value="water"
           />
-          <label for="name-a-z">name a-z</label>
+          <label for="water">water</label>
           <input
             type="radio"
             name="sort-method"
-            id="name-z-a"
-            name="name-z-a"
+            id="air"
+            name="air"
+            value="air"
           />
-          <label for="name-z-a">name z-a</label>
+          <label for="air">air</label>
+          <input
+            type="radio"
+            name="sort-method"
+            id="land"
+            name="land"
+            value="land"
+          />
+          <label for="land">land</label>
           <input
             type="radio"
             name="sort-method"
             id="only-mythical"
             name="only-mythical"
+            value="only-mythical"
           />
-          <label for="only-mythical">show only mythical</label>
+          <label for="only-mythical">mythical</label>
           <input
             type="radio"
             name="sort-method"
             id="only-non-mythical"
             name="only-non-mythical"
+            value="only-non-mythical"
           />
-          <label for="only-non-mythical">show only non-mythical</label>
+          <label for="only-non-mythical">non-mythical</label>
         </fieldset>
-        <button type="submit">sort</button>
+        <button type="submit" id="mascot-button">sort</button>
       </form>
       <div class="mascot-wrapper">
         <ul class="mascot-list">
-          <li class="mascot-card flighted mythical">
-            <img src="assets/pegasus.png" alt="" />
-            <h3>Peter the Pegasus</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-              enim doloribus ullam, quod aut dolorem nemo officia temporibus
-              possimus quos.
-            </p>
-            <small>non-mythical</small>
-          </li>
-          <li class="mascot-card flighted mythical">
-            <img src="assets/griffin.png" alt="" />
-            <h3>Garry the Griffin</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-              enim doloribus ullam, quod aut dolorem nemo officia temporibus
-              possimus quos.
-            </p>
-            <small>non-mythical</small>
-          </li>
-          <li class="mascot-card flighted">
-            <img src="assets/flamingo.png" alt="" />
+          <li class="mascot-card air non-mythical">
+            <img
+              src="assets/flamingo.png"
+              alt="a flamingo stands with its neck curved gracefully, and several other flamingoes in the background"
+            />
             <h3>Fenella the Flamingo</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
@@ -183,8 +180,11 @@
             </p>
             <small>non-mythical</small>
           </li>
-          <li class="mascot-card water">
-            <img src="assets/manatee.png" alt="" />
+          <li class="mascot-card water non-mythical">
+            <img
+              src="assets/manatee.png"
+              alt="a manatee looks up through the clear, blue water, as sun-light dapples its back"
+            />
             <h3>Marvin the Manatee</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
@@ -193,8 +193,21 @@
             </p>
             <small>non-mythical</small>
           </li>
-          <li class="mascot-card land">
-            <img src="assets/corgi.png" alt="" />
+          <li class="mascot-card air mythical">
+            <img
+              src="assets/pegasus.png"
+              alt="a pegasus stands majestically on a mountain-top, with a castle in the misty distance"
+            />
+            <h3>Peter the Pegasus</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card land non-mythical">
+            <img src="assets/corgi.png" alt="a corgi frolicks in the snow" />
             <h3>Claire the Corgi</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
@@ -203,8 +216,24 @@
             </p>
             <small>non-mythical</small>
           </li>
-          <li class="mascot-card land">
-            <img src="assets/elephant.png" alt="" />
+          <li class="mascot-card air mythical">
+            <img
+              src="assets/griffin.png"
+              alt="a griffin soars through the clouds"
+            />
+            <h3>Garry the Griffin</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card land non-mythical">
+            <img
+              src="assets/elephant.png"
+              alt="an elephant stands in the dry savannah"
+            />
             <h3>Elvis the Elephant</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
@@ -213,9 +242,25 @@
             </p>
             <small>non-mythical</small>
           </li>
-          <li class="mascot-card water">
-            <img src="assets/hammerhead.png" alt="" />
+          <li class="mascot-card water non-mythical">
+            <img
+              src="assets/hammerhead.png"
+              alt="a hammerhead shark cruises purposefully through the deep blue water towards a shoal of fish"
+            />
             <h3>Hermione the Hammerhead</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              enim doloribus ullam, quod aut dolorem nemo officia temporibus
+              possimus quos.
+            </p>
+            <small>non-mythical</small>
+          </li>
+          <li class="mascot-card land mythical">
+            <img
+              src="assets/unicorn.png"
+              alt="a white unicorn with a pink horn and a pink mane wears a garland of flowers draped across its neck, and stands in a sun-drenched woodland glade"
+            />
+            <h3>Unity the Unicorn</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
               enim doloribus ullam, quod aut dolorem nemo officia temporibus

@@ -145,6 +145,31 @@ svg.icon-warning-sign {
   margin-right: 1em;
 }
 
+form.sorter > fieldset {
+  display: flex;
+  justify-content: space-between;
+}
+form.sorter > fieldset > input[type="radio"] {
+  opacity: 0;
+}
+
+form.sorter > fieldset > input[type="radio"] + label {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+form.sorter > fieldset > input[type="radio"]:focus + label {
+  box-shadow: -1px -1px 4px rgba(9, 131, 119, 0.5);
+}
+form.sorter > fieldset > input[type="radio"]:hover + label {
+  box-shadow: -1px -1px 4px rgba(9, 131, 119, 0.5);
+}
+
+form.sorter > fieldset > input[type="radio"]:checked + label {
+  box-shadow: -1px -1px 4px rgba(111, 9, 131, 0.5);
+}
+
 .mascot-wrapper {
   display: flex;
   justify-content: center;
@@ -172,4 +197,7 @@ li.mascot-card > img {
   object-fit: cover;
   margin: 0;
   border-radius: 5px 5px 0 0;
+}
+#mascot-button {
+  display: none;
 }

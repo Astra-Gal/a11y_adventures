@@ -53,4 +53,24 @@ document.addEventListener("DOMContentLoaded", () => {
       signUpError.style.display = "flex";
     }
   });
+
+  const handleFilter = (selected) => {
+    const cards = document.getElementsByClassName("mascot-card");
+    if (selected === "show-all") {
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = "flex";
+      }
+    } else {
+      for (let i = 0; i < cards.length; i++) {
+        if (cards[i].className.indexOf(selected) > -1) {
+          cards[i].style.display = "flex";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  };
+
+  const mascotSorter = document.getElementById("mascot-sorter");
+  mascotSorter.addEventListener("change", handleFilter);
 });
