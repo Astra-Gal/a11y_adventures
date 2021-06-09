@@ -59,6 +59,11 @@ p {
   font-family: "Open Sans", sans-serif;
 }
 
+p#requirement {
+  font-size: 0.85rem;
+  color: darkslategrey;
+}
+
 button {
   background: black;
   color: white;
@@ -147,8 +152,9 @@ svg.icon-warning-sign {
 
 form.sorter > fieldset {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
+
 form.sorter > fieldset > input[type="radio"] {
   opacity: 0;
 }
@@ -200,4 +206,12 @@ li.mascot-card > img {
 }
 #mascot-button {
   display: none;
+}
+
+@media only screen and (min-width: 1332px) {
+  form.sorter > fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
