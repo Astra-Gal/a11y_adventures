@@ -83,7 +83,7 @@ button:hover,
 form {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 60vw;
   background: white;
   padding: 20px;
   border-radius: 5px;
@@ -206,6 +206,12 @@ li.mascot-card > img {
 }
 #mascot-button {
   display: none;
+}
+
+@media only screen and (min-width: 500px) {
+  form {
+    width: 50vw;
+  }
 }
 
 @media only screen and (min-width: 1332px) {
